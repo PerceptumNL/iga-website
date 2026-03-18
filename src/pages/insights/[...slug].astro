@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/global.css';
+import { getCollection, render } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+
+export async function getStaticPaths() {
+  const insights = await getCollection('insights');
+  return insights.map((entry) => ({
+    params: { slug: entry.id.replace(/\.md$/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout title={`${entry.data.title} | IGA Insights`} description={entry.data.description}>
+
+  <article class="pt-32 pb-24 lg:pt-40 lg:pb-32">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+
+      <!-- Header -->
+      <div class="fade-up mb-12">
+        <a href={`${base}insights`} class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-iga-black transition-colors mb-8">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Back to Insights
+        </a>
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-xs font-semibold tracking-wider uppercase text-iga-blue">{entry.data.category}</span>
+          <span class="text-xs text-gray-400">·</span>
+          <span class="text-xs text-gray-400">{entry.data.readTime}</span>
+          <span class="text-xs text-gray-400">·</span>
+          <time class="text-xs text-gray-400">{new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+        </div>
+
+        <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight leading-tight">{entry.data.title}</h1>
+      </div>
+
+      <div class="gradient-line mb-12"></div>
+
+      <!-- Content -->
+      <div class="fade-up prose prose-lg prose-gray max-w-none
+        prose-headings:font-serif prose-headings:tracking-tight
+        prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
+        prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+        prose-p:leading-relaxed prose-p:text-gray-600
+        prose-strong:text-iga-black prose-strong:font-semibold
+        prose-a:text-iga-blue prose-a:no-underline hover:prose-a:underline
+        prose-table:text-sm
+        prose-th:bg-iga-grey/30 prose-th:px-4 prose-th:py-2 prose-th:text-left prose-th:font-semibold
+        prose-td:px-4 prose-td:py-2 prose-td:border-b prose-td:border-gray-100
+        prose-li:text-gray-600
+        prose-em:text-iga-blue prose-em:not-italic prose-em:font-medium
+        prose-blockquote:border-l-2 prose-blockquote:border-iga-blue prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-500
+        prose-hr:border-gray-200
+      ">
+        <Content />
+      </div>
+
+      <!-- Author / CTA -->
+      <div class="mt-16 pt-8 border-t border-gray-200">
+        <div class="bg-iga-black text-white p-8 lg:p-10">
+          <h3 class="font-serif text-xl font-medium mb-3">Ready to build your revenue system?</h3>
+          <p class="text-gray-300 mb-6">Book a strategy session and we'll analyze your current revenue process, identify where you're leaking growth, and map out a structured system.</p>
+          <a href={`${base}contact`} class="inline-flex items-center gap-2 bg-iga-blue text-iga-black px-6 py-3 text-sm font-semibold hover:bg-iga-blue-light transition-colors">
+            Schedule a Strategy Session
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</Layout>

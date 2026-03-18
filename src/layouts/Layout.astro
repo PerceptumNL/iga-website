@@ -60,6 +60,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
           <!-- Desktop nav -->
           <div class="hidden md:flex items-center gap-8">
             <a href={`${base}services`} class="text-sm font-medium text-gray-700 hover:text-iga-black transition-colors">Services</a>
+            <a href={`${base}insights`} class="text-sm font-medium text-gray-700 hover:text-iga-black transition-colors">Insights</a>
             <a href={`${base}about`} class="text-sm font-medium text-gray-700 hover:text-iga-black transition-colors">About</a>
             <a href={`${base}contact`} class="inline-flex items-center gap-2 bg-iga-black text-white px-6 py-2.5 text-sm font-medium hover:bg-gray-800 transition-colors">
               Book a Call
@@ -78,6 +79,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
       <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
         <div class="px-6 py-4 space-y-3">
           <a href={`${base}services`} class="block text-sm font-medium text-gray-700">Services</a>
+          <a href={`${base}insights`} class="block text-sm font-medium text-gray-700">Insights</a>
           <a href={`${base}about`} class="block text-sm font-medium text-gray-700">About</a>
           <a href={`${base}contact`} class="block bg-iga-black text-white px-6 py-2.5 text-sm font-medium text-center">Book a Call</a>
         </div>
@@ -104,6 +106,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
             <ul class="space-y-3">
               <li><a href={`${base}`} class="text-gray-300 hover:text-white transition-colors">Home</a></li>
               <li><a href={`${base}services`} class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+              <li><a href={`${base}insights`} class="text-gray-300 hover:text-white transition-colors">Insights</a></li>
               <li><a href={`${base}about`} class="text-gray-300 hover:text-white transition-colors">About</a></li>
               <li><a href={`${base}contact`} class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
             </ul>

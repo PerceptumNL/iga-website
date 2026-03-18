@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/global.css';
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+const allInsights = await getCollection('insights');
+const sortedInsights = allInsights.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+const featured = sortedInsights.filter(i => i.data.featured);
+const rest = sortedInsights.filter(i => !i.data.featured);
+---
+
+<Layout title="Insights | IGA — Revenue Engineering Research & Strategy" description="Research-backed insights on revenue engineering, B2B growth systems, lead qualification, and marketing strategy. Built from data, not opinions.">
+
+  <section class="pt-32 pb-16 lg:pt-40 lg:pb-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="fade-up max-w-3xl">
+        <p class="text-sm font-medium tracking-widest uppercase text-iga-blue mb-4">Insights</p>
+        <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-8">
+          Research, strategy, and systems thinking
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+          We study how revenue actually works in B2B. These insights are built from data, not opinions — designed to help you think differently about growth.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="gradient-line"></div>
+
+  <!-- Featured articles -->
+  {featured.length > 0 && (
+    <section class="py-16 lg:py-24">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <p class="text-sm font-medium tracking-widest uppercase text-gray-400 mb-8">Featured</p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {featured.map((insight) => (
+            <a href={`${base}insights/${insight.id.replace(/\.md$/, '')}`} class="fade-up card-hover group block border border-gray-100 p-8 lg:p-10">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-xs font-semibold tracking-wider uppercase text-iga-blue">{insight.data.category}</span>
+                <span class="text-xs text-gray-400">·</span>
+                <span class="text-xs text-gray-400">{insight.data.readTime}</span>
+              </div>
+              <h2 class="font-serif text-2xl md:text-3xl font-medium mb-4 group-hover:text-iga-blue transition-colors">{insight.data.title}</h2>
+              <p class="text-gray-600 leading-relaxed mb-6">{insight.data.description}</p>
+              <div class="flex items-center gap-2 text-sm font-medium text-iga-black group-hover:text-iga-blue transition-colors">
+                Read article
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- All articles -->
+  {rest.length > 0 && (
+    <section class="py-16 lg:py-24 bg-iga-grey/20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <p class="text-sm font-medium tracking-widest uppercase text-gray-400 mb-8">All Insights</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {rest.map((insight) => (
+            <a href={`${base}insights/${insight.id.replace(/\.md$/, '')}`} class="fade-up card-hover group block bg-white border border-gray-100 p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-xs font-semibold tracking-wider uppercase text-iga-blue">{insight.data.category}</span>
+                <span class="text-xs text-gray-400">·</span>
+                <span class="text-xs text-gray-400">{insight.data.readTime}</span>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-3 group-hover:text-iga-blue transition-colors">{insight.data.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{insight.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="py-24 lg:py-32 bg-iga-black text-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center fade-up">
+      <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight mb-6">Want to apply these ideas to your business?</h2>
+      <p class="text-gray-300 text-lg mb-10">Book a strategy session and we'll show you what a revenue system looks like for your specific situation.</p>
+      <a href={`${base}contact`} class="inline-flex items-center gap-2 bg-iga-blue text-iga-black px-8 py-4 text-sm font-semibold hover:bg-iga-blue-light transition-colors">
+        Schedule a Strategy Session
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+    </div>
+  </section>
+
+</Layout>
