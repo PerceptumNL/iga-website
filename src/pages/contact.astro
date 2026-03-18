@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Contact | IGA — Schedule a Strategy Session" description="Book a strategy session with IGA. We'll analyze your revenue process and map out a structured growth system for your business.">
+
+  <section class="pt-32 pb-24 lg:pt-40 lg:pb-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+
+        <!-- Left: Copy -->
+        <div class="fade-up">
+          <p class="text-sm font-medium tracking-widest uppercase text-iga-blue mb-4">Get in touch</p>
+          <h1 class="font-serif text-4xl md:text-5xl font-medium tracking-tight mb-8">
+            Let's talk about your growth
+          </h1>
+
+          <div class="space-y-6 text-lg text-gray-600 leading-relaxed mb-12">
+            <p>
+              A strategy session is not a sales pitch. It's a conversation about your business, your revenue process, and where the gaps are.
+            </p>
+            <p>
+              We'll analyze your current acquisition, conversion, and retention — and map out what a structured system looks like for your specific situation.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h3 class="font-serif text-xl font-medium">What to expect</h3>
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 bg-iga-blue rounded-full mt-2.5 flex-shrink-0"></span>
+                Deep dive into your current revenue process
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 bg-iga-blue rounded-full mt-2.5 flex-shrink-0"></span>
+                Identification of where growth is leaking
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 bg-iga-blue rounded-full mt-2.5 flex-shrink-0"></span>
+                A clear outline of what a system looks like for you
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 bg-iga-blue rounded-full mt-2.5 flex-shrink-0"></span>
+                No commitment, no pitch deck — just clarity
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-12 pt-8 border-t border-gray-200">
+            <p class="text-sm text-gray-500 mb-2">Prefer email?</p>
+            <a href="mailto:info@iga.agency" class="text-iga-black font-medium hover:text-iga-blue transition-colors">info@iga.agency</a>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="fade-up fade-up-delay-2">
+          <form id="contact-form" class="bg-iga-grey/20 border border-gray-100 p-8 lg:p-10">
+            <div class="space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name <span class="text-iga-blue">*</span></label>
+                <input type="text" id="name" name="name" required
+                  class="w-full px-4 py-3 bg-white border border-gray-200 text-sm focus:outline-none focus:border-iga-blue focus:ring-1 focus:ring-iga-blue transition-colors" />
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email <span class="text-iga-blue">*</span></label>
+                <input type="email" id="email" name="email" required
+                  class="w-full px-4 py-3 bg-white border border-gray-200 text-sm focus:outline-none focus:border-iga-blue focus:ring-1 focus:ring-iga-blue transition-colors" />
+              </div>
+
+              <div>
+                <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                <input type="text" id="company" name="company"
+                  class="w-full px-4 py-3 bg-white border border-gray-200 text-sm focus:outline-none focus:border-iga-blue focus:ring-1 focus:ring-iga-blue transition-colors" />
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message <span class="text-iga-blue">*</span></label>
+                <textarea id="message" name="message" rows="5" required
+                  class="w-full px-4 py-3 bg-white border border-gray-200 text-sm focus:outline-none focus:border-iga-blue focus:ring-1 focus:ring-iga-blue transition-colors resize-none"></textarea>
+              </div>
+
+              <!-- Honeypot -->
+              <div class="hidden" aria-hidden="true">
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <button type="submit" id="submit-btn"
+                class="w-full inline-flex items-center justify-center gap-2 bg-iga-black text-white px-8 py-4 text-sm font-semibold tracking-wide hover:bg-gray-800 transition-colors">
+                Send Message
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </button>
+            </div>
+
+            <div id="form-success" class="hidden mt-6 p-4 bg-iga-blue/10 border border-iga-blue/20">
+              <p class="text-sm font-medium text-iga-black">Thank you! We'll be in touch shortly.</p>
+            </div>
+
+            <div id="form-error" class="hidden mt-6 p-4 bg-red-50 border border-red-200">
+              <p class="text-sm font-medium text-red-800">Something went wrong. Please try again or email us directly.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const FORMBRIDGE_URL = 'https://forms.perceptum.nl/api/v1/s/f_db60936eb481';
+    const formLoadTime = Date.now();
+
+    document.getElementById('contact-form')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target as HTMLFormElement;
+      const btn = document.getElementById('submit-btn') as HTMLButtonElement;
+      const successEl = document.getElementById('form-success');
+      const errorEl = document.getElementById('form-error');
+
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      successEl?.classList.add('hidden');
+      errorEl?.classList.add('hidden');
+
+      const data = {
+        name: (form.querySelector('#name') as HTMLInputElement).value,
+        email: (form.querySelector('#email') as HTMLInputElement).value,
+        company: (form.querySelector('#company') as HTMLInputElement).value,
+        message: (form.querySelector('#message') as HTMLTextAreaElement).value,
+        _ts: formLoadTime,
+        _gotcha: '',
+      };
+
+      try {
+        const res = await fetch(FORMBRIDGE_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        if (!res.ok) throw new Error('Failed');
+
+        form.reset();
+        successEl?.classList.remove('hidden');
+        btn.innerHTML = 'Sent! ✓';
+        setTimeout(() => {
+          btn.innerHTML = 'Send Message <svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>';
+          btn.disabled = false;
+        }, 4000);
+      } catch {
+        errorEl?.classList.remove('hidden');
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+      }
+    });
+  </script>
+
+</Layout>

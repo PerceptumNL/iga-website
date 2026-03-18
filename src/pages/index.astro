@@ -1,9 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="IGA — Innovative Growth Agency | Revenue Engineering Partner">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IGA — Innovative Growth Agency",
+    "url": "https://perceptumnl.github.io/iga-website/",
+    "logo": "https://perceptumnl.github.io/iga-website/logos/logo-iga-black.png",
+    "description": "Revenue engineering partner focused on helping businesses generate high quality leads and scale efficiently through structured marketing systems.",
+    "foundingLocation": { "@type": "Place", "name": "St. Maarten" },
+    "knowsAbout": ["Revenue Engineering", "B2B Marketing", "Lead Generation", "Marketing Systems", "Conversion Optimization"]
+  })} />
 
   <!-- ============================================ -->
   <!-- HERO                                         -->
@@ -28,7 +41,7 @@ import '../styles/global.css';
         </p>
 
         <div class="fade-up fade-up-delay-3 flex flex-col sm:flex-row gap-4">
-          <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-iga-black text-white px-8 py-4 text-sm font-semibold tracking-wide hover:bg-gray-800 transition-colors">
+          <a href={`${base}contact`} class="inline-flex items-center justify-center gap-2 bg-iga-black text-white px-8 py-4 text-sm font-semibold tracking-wide hover:bg-gray-800 transition-colors">
             Schedule a Strategy Session
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
@@ -282,7 +295,7 @@ import '../styles/global.css';
             </li>
           </ul>
 
-          <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-iga-black text-white px-6 py-3.5 text-sm font-semibold hover:bg-gray-800 transition-colors w-full">
+          <a href={`${base}contact`} class="inline-flex items-center justify-center gap-2 bg-iga-black text-white px-6 py-3.5 text-sm font-semibold hover:bg-gray-800 transition-colors w-full">
             Get Started
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
@@ -329,7 +342,7 @@ import '../styles/global.css';
             </li>
           </ul>
 
-          <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-iga-black text-white px-6 py-3.5 text-sm font-semibold hover:bg-gray-800 transition-colors w-full">
+          <a href={`${base}contact`} class="inline-flex items-center justify-center gap-2 bg-iga-black text-white px-6 py-3.5 text-sm font-semibold hover:bg-gray-800 transition-colors w-full">
             Get Started
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
@@ -379,7 +392,7 @@ import '../styles/global.css';
             </li>
           </ul>
 
-          <a href="#contact" class="relative inline-flex items-center justify-center gap-2 bg-iga-blue text-iga-black px-6 py-3.5 text-sm font-semibold hover:bg-iga-blue-light transition-colors w-full">
+          <a href={`${base}contact`} class="relative inline-flex items-center justify-center gap-2 bg-iga-blue text-iga-black px-6 py-3.5 text-sm font-semibold hover:bg-iga-blue-light transition-colors w-full">
             Get Started
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
