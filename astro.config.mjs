@@ -4,6 +4,6 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://perceptumnl.github.io',
-  base: '/iga-website',
+  base: '/iga-website/',
   integrations: [tailwind(), sitemap()],
 });
