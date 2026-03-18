@@ -84,3 +84,186 @@
   margin-right: 12px;
   flex-shrink: 0;
 }
+
+/* ========================================
+   Article / Insight content styling
+   ======================================== */
+
+.article-content {
+  font-size: 1.125rem;
+  line-height: 1.85;
+  color: #4b5563;
+}
+
+/* Paragraphs — generous spacing */
+.article-content p {
+  margin-bottom: 1.75rem;
+}
+
+/* Headings — serif, black, clear hierarchy */
+.article-content h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #000;
+  letter-spacing: -0.01em;
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #E1E1E1;
+}
+
+.article-content h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #000;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* First paragraph after heading — slightly larger */
+.article-content h2 + p,
+.article-content h3 + p {
+  font-size: 1.15rem;
+}
+
+/* Strong text */
+.article-content strong {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Links */
+.article-content a {
+  color: #6B9BE8;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.article-content a:hover {
+  border-bottom-color: #6B9BE8;
+}
+
+/* Lists — clean spacing, subtle bullets */
+.article-content ul,
+.article-content ol {
+  margin: 1.5rem 0;
+  padding-left: 0;
+}
+
+.article-content ul {
+  list-style: none;
+}
+
+.article-content ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-content ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  background: #95BCF8;
+  border-radius: 50%;
+}
+
+.article-content ol {
+  list-style: none;
+  counter-reset: article-counter;
+}
+
+.article-content ol li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  counter-increment: article-counter;
+}
+
+.article-content ol li::before {
+  content: counter(article-counter) ".";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: #95BCF8;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Blockquotes — accent left border + bg */
+.article-content blockquote {
+  border-left: 3px solid #95BCF8;
+  background: rgba(149, 188, 248, 0.06);
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 4px 4px 0;
+  font-style: normal;
+}
+
+.article-content blockquote p {
+  margin-bottom: 0;
+  color: #4b5563;
+}
+
+/* Tables — clean, professional */
+.article-content table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border: 1px solid #E1E1E1;
+}
+
+.article-content thead {
+  background: #f3f4f6;
+}
+
+.article-content th {
+  padding: 0.75rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #000;
+  border-bottom: 2px solid #E1E1E1;
+}
+
+.article-content td {
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #4b5563;
+}
+
+.article-content tbody tr:hover {
+  background: rgba(149, 188, 248, 0.04);
+}
+
+/* Horizontal rules */
+.article-content hr {
+  border: none;
+  height: 1px;
+  background: #E1E1E1;
+  margin: 3rem 0;
+}
+
+/* Emphasis — blue highlight, not italic */
+.article-content em {
+  font-style: normal;
+  color: #000;
+  font-weight: 500;
+}
+
+/* Code (inline) */
+.article-content code {
+  font-size: 0.875em;
+  background: #f3f4f6;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+}
