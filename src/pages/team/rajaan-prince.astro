@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/global.css';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Rajaan Prince | IGA — Innovative Growth Agency" description="Rajaan Prince is a Customer Journey Specialist and Co-founder of IGA, dedicated to optimizing user experiences that convert into measurable results.">
+
+  <!-- Hero -->
+  <section class="pt-32 pb-16 lg:pt-40 lg:pb-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex items-center gap-2 text-sm text-gray-500">
+          <li><a href={`${base}`} class="hover:text-iga-black transition-colors">Home</a></li>
+          <li><span class="mx-1">/</span></li>
+          <li><a href={`${base}about`} class="hover:text-iga-black transition-colors">About</a></li>
+          <li><span class="mx-1">/</span></li>
+          <li class="text-iga-black font-medium">Rajaan Prince</li>
+        </ol>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <!-- Photo -->
+        <div class="fade-up">
+          <div class="aspect-[3/4] bg-iga-grey/30 overflow-hidden">
+            <img src={`${base}team/rajaan_prince.jpeg`} alt="Rajaan Prince" class="w-full h-full object-cover" />
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="fade-up fade-up-delay-1">
+          <p class="text-sm font-medium tracking-widest uppercase text-iga-blue mb-4">Co-founder</p>
+          <h1 class="font-serif text-4xl md:text-5xl font-medium tracking-tight mb-4">Rajaan Prince</h1>
+          <p class="text-lg text-iga-blue font-medium mb-8">Customer Journey Specialist</p>
+
+          <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+            <p>
+              Rajaan sees the full picture of how people move from first impression to loyal customer. With a background in Sports Business, he brings a competitive edge and a deep understanding of what drives people to act.
+            </p>
+            <p>
+              His strength lies in designing customer journeys that feel natural but perform exceptionally. Every touchpoint, every interaction, every moment of decision — Rajaan maps it out and optimizes it so that nothing is left to chance.
+            </p>
+            <p>
+              At IGA, he's the one making sure that the systems don't just attract attention — they convert it into real, measurable outcomes. His philosophy is simple: if you understand the journey your customer takes, you can make every step count.
+            </p>
+          </div>
+
+          <!-- LinkedIn -->
+          <div class="mt-10 pt-8 border-t border-gray-200">
+            <a href="https://www.linkedin.com/in/rajaan-prince-0b75471b7/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-gray-600 hover:text-iga-black transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span class="text-sm font-medium">Connect on LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="py-24 lg:py-32 bg-iga-black text-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center fade-up">
+      <p class="font-serif text-2xl md:text-3xl italic leading-relaxed text-gray-200">
+        "People don't just buy a product. They go through a journey. Our job is to make that journey feel effortless — and make sure it leads somewhere."
+      </p>
+      <p class="text-sm text-gray-500 font-medium mt-6">— Rajaan Prince</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 lg:py-32">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center fade-up">
+      <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight mb-6">Want to work with Rajaan and the IGA team?</h2>
+      <p class="text-gray-600 text-lg mb-10">Let's talk about your business and where the growth opportunities are.</p>
+      <a href={`${base}contact`} class="inline-flex items-center gap-2 bg-iga-black text-white px-8 py-4 text-sm font-semibold hover:bg-gray-800 transition-colors">
+        Schedule a Strategy Session
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+    </div>
+  </section>
+
+</Layout>
