@@ -80,4 +80,4 @@ That is what revenue engineering looks like. And that is what we do.
 
 ---
 
-*Ready to audit your marketing-revenue connection? [Schedule a strategy session](/iga-website/contact) and we'll map out where your revenue is leaking.*
+*Ready to audit your marketing-revenue connection? [Schedule a strategy session](/contact) and we'll map out where your revenue is leaking.*

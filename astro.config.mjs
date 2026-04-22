@@ -3,7 +3,6 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://perceptumnl.github.io',
-  base: '/iga-website/',
+  site: 'https://igamarketing.com',
   integrations: [tailwind(), sitemap()],
 });

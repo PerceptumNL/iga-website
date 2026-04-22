@@ -1,11 +1,11 @@
 {
   "name": "IGA — Innovative Growth Agency",
   "short_name": "IGA",
-  "start_url": "/iga-website/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#95BCF8",
   "icons": [
-    { "src": "/iga-website/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
   ]
 }

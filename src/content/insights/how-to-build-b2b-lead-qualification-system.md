@@ -136,4 +136,4 @@ You don't need more leads. You need better ones. And that requires a system.
 
 ---
 
-*Want to build a lead qualification system for your business? [Let's talk](/iga-website/contact) — we'll analyze your current pipeline and show you where qualified leads are falling through.*
+*Want to build a lead qualification system for your business? [Let's talk](/contact) — we'll analyze your current pipeline and show you where qualified leads are falling through.*

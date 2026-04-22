@@ -115,4 +115,4 @@ You don't need more leads. You need a system.
 
 ---
 
-*Want to find out where your funnel is leaking? [Book a strategy session](/iga-website/contact) — we'll map your full funnel and identify the highest-impact improvements.*
+*Want to find out where your funnel is leaking? [Book a strategy session](/contact) — we'll map your full funnel and identify the highest-impact improvements.*

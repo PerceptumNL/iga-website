@@ -121,4 +121,4 @@ This is not a quick win. It is a structural advantage that grows stronger over t
 
 ---
 
-*Selling to enterprise accounts with long sales cycles? [Let's build your ABM system](/iga-website/contact) — we'll map your target accounts and design the engagement strategy.*
+*Selling to enterprise accounts with long sales cycles? [Let's build your ABM system](/contact) — we'll map your target accounts and design the engagement strategy.*
