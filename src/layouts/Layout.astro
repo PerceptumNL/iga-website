@@ -6,7 +6,7 @@ interface Props {
 }
 
 const base = import.meta.env.BASE_URL;
-const siteUrl = import.meta.env.SITE || 'https://perceptumnl.github.io';
+const siteUrl = import.meta.env.SITE || 'https://igamarketing.com';
 const { title, description = 'IGA — Revenue engineering partner. We build systems that generate leads, improve conversion, and scale your business.', ogImage = `${base}og-image.png` } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 ---

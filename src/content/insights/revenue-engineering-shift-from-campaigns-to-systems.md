@@ -93,4 +93,4 @@ If it's not, more campaigns won't fix it. Better systems will.
 
 ---
 
-*Want to understand what a revenue system looks like for your business? [Schedule a strategy session](/iga-website/contact) — we'll audit your current setup and identify where the system breaks down.*
+*Want to understand what a revenue system looks like for your business? [Schedule a strategy session](/contact) — we'll audit your current setup and identify where the system breaks down.*
